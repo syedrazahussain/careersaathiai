@@ -228,7 +228,7 @@ const Step3report = ({ report, user, setuser }) => {
 
                       <div className='mt-3.5 space-y-2.5'>
                         {item.feedback?.improvements?.map((item,i)=>(
-                          <div  key={improvement || i} className='rounded-lg border border-white/10 bg-white/[0.03] p-3.5'>
+                          <div  key={i} className='rounded-lg border border-white/10 bg-white/[0.03] p-3.5'>
                             <p className='text-sm text-zinc-300'>
                               • {item}
                             </p>
