@@ -52,7 +52,7 @@ const Billing = ({ user, setuser }) => {
                 key:import.meta.env.VITE_RAZORPAY_KEY_ID,
                 amount:result.data.order.amount,
                 currency:result.data.order.currency,
-                name:"FresherAI",
+                name:"RisbenAI",
                 description:`${plan.title} - ${plan.coins} Interview Coins`,
                 order_id:result.data.order.id,
 
@@ -100,7 +100,7 @@ const Billing = ({ user, setuser }) => {
                 className='sticky inset-x-0 top-0 z-20 border-b border-black/8 bg-white/80 backdrop-blur-xl'>
                 <div className='mx-auto flex h-12 max-w-7xl items-center justify-between px-3 sm:px-5'>
                     <div onClick={() => navigate("/dashboard")} className='flex cursor-pointer items-center gap-1.5'>
-                        <span className='text-sm font-extrabold sm:text-base text-[#0a0a0a]'>FresherAI</span>
+                        <span className='text-sm font-extrabold sm:text-base text-[#0a0a0a]'>RisbenAI</span>
                         <span className='hidden rounded bg-black/5 px-1.5 py-0.5 text-[10px] text-black/50 sm:block'>Interview Coins</span>
                     </div>
                     <button onClick={() => setshowMenu(!showMenu)} className='flex w-8 h-8 items-center justify-center rounded-lg border

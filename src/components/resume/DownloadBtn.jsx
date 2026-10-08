@@ -9,7 +9,7 @@ import {
 const DownloadBtn = ({ docRef, user, setuser }) => {
     const handlePdf = useReactToPrint({
         contentRef: docRef,
-        documentTitle: "FresherAIPDF"
+        documentTitle: "RisbenAIPDF"
     })
 
     const handleDownload = async () => {

@@ -7,6 +7,7 @@ import { GiTwoCoins } from "react-icons/gi";
 import { FaPlusCircle } from 'react-icons/fa';
 import { RiBrainLine } from "react-icons/ri";
 
+
 const NAV_ITEMS = [
     {
         icon: <FiFileText size={15} />,
@@ -41,22 +42,28 @@ const Sidebar = ({
 }) => {
 
     const navigate = useNavigate();
-    const avatar = user?.name ? user.name.split(" ").map((n) => n[0]).join("").toUpperCase().slice(0.2) : "U"
+    const avatar = user?.name ? user.name.split(" ").map((n) => n[0]).join("").toUpperCase().slice(0, 2) : "U"
 
     const inner = (
         <div className='flex flex-col h-full '>
             <div className={`px-3 h-[52px] border-b border-black/8 shrink-0 flex items-center ${sidebarOpen ? "justify-between" : "justify-center"}`}>
                 {sidebarOpen && (
                     <div className='flex items-center gap-2.5'>
-                        <div className='w-7 h-7 rounded-lg bg-[#000000] flex items-center justify-center shrink-0 shadow-[0_4px_14px_rgba(0,0,0,0.25)]'>
-                            <GiArtificialHive size={19} color="white" />
-
+                        <div className="w-7 h-7 rounded-lg  flex items-center justify-center shrink-0 overflow-hidden shadow-[0_4px_14px_rgba(0,0,0,0.25)]"
+                            style={{
+                                backgroundColor: "#ffffff",
+                            }}>
+                            <img
+                                src="/risbenai_logo_withbg.png"
+                                alt="RisbenAI"
+                                className="w-full h-full object-contain"
+                            />
                         </div>
                         <motion.span
                             initial={{ opacity: 0, x: -6 }}
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.15 }}
-                            className='font-extrabold text-sm tracking-tight text-[#0a0a0a] whitespace-nowrap'>FresherAI
+                            className='font-extrabold text-sm tracking-tight text-[#0a0a0a] whitespace-nowrap'>RisbenAI
                         </motion.span>
 
                     </div>
@@ -64,8 +71,8 @@ const Sidebar = ({
 
                 <div className='flex items-center'>
                     <motion.button
-                        whileHovfer={{ scale: 1.1 }}
-                        whileTao={{ scale: 0.95 }}
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.95 }}
                         onClick={() => setSidebarOpen(!sidebarOpen)}
                         className=' cursor-pointer hidden md:flex text-black/30 hover:text-[#0a0a0a] transition-colors shrink-0'>
                         <FiSidebar size={15} />
@@ -73,8 +80,8 @@ const Sidebar = ({
 
                     </motion.button>
                     <motion.button
-                        whileHovfer={{ scale: 1.1 }}
-                        whileTao={{ scale: 0.95 }}
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.95 }}
 
                         onClick={() => setMobileOpen(!mobileOpen)}
                         className=' cursor-pointer md:hidden text-black/30 hover:text-[#0a0a0a] transition-colors shrink-0'>
@@ -240,14 +247,12 @@ const Sidebar = ({
     return (
         <>
             <motion.aside
-
                 animate={{ width: sidebarOpen ? 260 : 72 }}
                 transition={{ duration: 0.25, ease: "easeInOut" }}
-                className="hidden md:flex fixed top-0 left-0 h-screen bg-white border border-black/8 flex-col z-40 overflow-hidden">
+                className="hidden md:flex fixed top-0 left-0 h-screen bg-white border border-black/8 flex-col z-40 overflow-hidden"
+            >
                 {inner}
-
             </motion.aside>
-
             <AnimatePresence>
                 {mobileOpen && (
                     <motion.div
@@ -268,8 +273,7 @@ const Sidebar = ({
                         animate={{ x: 0 }}
                         exit={{ x: -280 }}
                         transition={{ duration: 0.25, ease: "easeInOut" }}
-                        className='fixed top-0 left-0 h-screen w-[280px] max-w-[85vw] bg-white
-                    border-r border-black/8 flex flex-col z-50 md:hidden overflow-hidden'>
+                        className="fixed top-0 left-0 h-screen w-[280px] max-w-[85vw] bg-white border-r border-black/8 flex flex-col z-50 md:hidden overflow-hidden">
                         {inner}
 
                     </motion.div>

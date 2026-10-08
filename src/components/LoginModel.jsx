@@ -40,7 +40,7 @@ const LoginModel = ({ onClose,setuser }) => {
                     <h2 className='text-lg font-bold text-center mb-2 text-white'>
                         Sign In to {" "}
                         <span className='font-extrabold text-lg tracking-tight
-                        text-white'>FresherAI</span>
+                        text-white'>RisbenAI</span>
                     </h2>
                     <p className='text-white/45 text-center text-xs '>
                         Continue your AI Interview journey

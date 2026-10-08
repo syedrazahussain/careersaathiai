@@ -213,7 +213,7 @@ const Roadmap = ({ user, setuser }) => {
                 className='sticky inset-x-0 top-0 z-20 border-b border-black/8 bg-white/80 backdrop-blur-xl'>
                 <div className='mx-auto flex h-12 max-w-7xl items-center justify-between px-3 sm:px-5'>
                     <div onClick={() => navigate("/dashboard")} className='flex cursor-pointer items-center gap-1.5'>
-                        <span className='text-sm font-extrabold sm:text-base text-[#0a0a0a]'>FresherAI</span>
+                        <span className='text-sm font-extrabold sm:text-base text-[#0a0a0a]'>RisbenAI</span>
                         <span className='hidden rounded bg-black/5 px-1.5 py-0.5 text-[10px] text-black/50 sm:block'>Roadmap Builder</span>
                     </div>
                     <button onClick={() => sethistoryOpen(!historyOpen)} className='flex h-8 items-center justify-center gap-1 rounded-lg border

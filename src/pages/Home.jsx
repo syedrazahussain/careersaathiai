@@ -24,8 +24,14 @@ const Home = ({ setuser }) => {
 
         <div className="flex items-center gap-2">
           <div className="w-7 h-7 rounded-lg bg-[#0a0a0a] flex items-center justify-center shadow-[0_4px_14px_rgba(0,0,0,0.18)]">
-            <GiArtificialHive size={15} color='white' /></div>
-          <span className="font-extrabold text-base tracking-tight text-[#0a0a0a]">FresherAI</span>
+            <img
+              src="/risbenai_logo.png"
+              alt="RisbenAI"
+              className="w-full h-full object-contain"
+            />
+
+          </div>
+          <span className="font-extrabold text-base tracking-tight text-[#0a0a0a]">RisbenAI</span>
         </div>
 
         <motion.button
@@ -76,7 +82,7 @@ const Home = ({ setuser }) => {
             transition={{ duration: 0.55, delay: 0.2 }}
             className="text-black/45 text-sm leading-relaxed max-w-md
           mx-auto mb-6 [text-shadow:0_2px_10px_rgba(0,0,0,0.06)]">
-            Fresher.AI is an innovative Ai-powered interview preparation Platform
+            Risben.AI is an innovative Ai-powered interview preparation Platform
             designed to help job seekers excel in their interviews.
 
           </motion.p>
@@ -146,7 +152,7 @@ const Home = ({ setuser }) => {
 
 
             <p className="text-black/40 text-sm max-w-2xl mx-auto mt-4 leading-relaxed">
-              Fresher.Ai combines multiple AI agents that work together
+              Risben.Ai combines multiple AI agents that work together
               to help you build your resume,practise interviews,
               receive detailed feedback, and follow a personalized roadmap
               to land your dream job.
@@ -233,17 +239,21 @@ const Home = ({ setuser }) => {
       <footer className="border-t border-black/7 py-6 text-center bg-white">
         <div className="flex items-center justify-center gap-3 mb-1.5">
           <div className="w-5 h-5 rounded-md bg-[#0a0a0a] flex items-center justify-center">
-            <GiArtificialHive size={11} color='white' />
+             <img
+              src="/risbenai_logo.png"
+              alt="RisbenAI"
+              className="w-full h-full object-contain"
+            />
 
           </div>
           <span className="font-bold text-xs text-[#0a0a0a]/70">
-            FresherAI
+            RisbenAI
           </span>
 
         </div>
 
         <div className="text-black/60 text-xs">
-          © {new Date().getFullYear()} Fresher.AI . All rights reserved
+          © {new Date().getFullYear()} Risben.AI . All rights reserved
 
         </div>
 

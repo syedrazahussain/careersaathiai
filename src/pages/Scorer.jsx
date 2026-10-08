@@ -139,7 +139,7 @@ const Navbar = ({ label }) => {
                 >
 
                     <span className='text-sm font-extrabold sm:text-base text-[#0a0a0a]'>
-                        FresherAI
+                        RisbenAI
                     </span>
 
                     <span className='hidden rounded bg-black/5 px-1.5 py-0.5 text-[10px] text-black/50 sm:block'>
