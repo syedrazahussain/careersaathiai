@@ -6,7 +6,7 @@ import {
     FiInfo
 } from "react-icons/fi"
 import {
-    useCoins,
+    useCoins as deductCoins,
     refundCoins
 } from "../../apis/user.api"
 
@@ -24,15 +24,15 @@ import { useNavigate } from "react-router-dom"
 
 
 const ResumeAnalyzer = ({
-    user,
+    
     setuser
 }) => {
 
     const navigate = useNavigate();
 
     const [
-        sidebarOpen,
-        setSidebarOpen
+        sidebarOpen
+        
     ] = useState(true)
 
     const [
@@ -133,7 +133,7 @@ const ResumeAnalyzer = ({
                 )
             }
 
-            const coinResponse = await useCoins({
+            const coinResponse = await deductCoins({
                 coins: 1,
                 action: "resume-Analyzer"
             })

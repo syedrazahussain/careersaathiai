@@ -22,8 +22,9 @@ import {
     RadialBarChart
 } from "recharts"
 
+
 import {
-    useCoins,
+    useCoins as deductCoins,
     refundCoins
 } from '../apis/user.api'
 
@@ -155,7 +156,7 @@ const Navbar = ({ label }) => {
 }
 
 
-const Scorer = ({ user, setuser }) => {
+const Scorer = ({  setuser }) => {
 
     const [file, setFile] = useState(null)
 
@@ -366,7 +367,7 @@ const uploadResume = async () => {
         // DEDUCT COIN
         // =================================================
 
-        const coinResponse = await useCoins({
+        const coinResponse = await deductCoins({
             coins: 1,
             action: "resume-Scorer"
         })

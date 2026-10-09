@@ -2,11 +2,11 @@ import React from 'react'
 import { FiDownload } from 'react-icons/fi'
 import { useReactToPrint } from 'react-to-print'
 import {
-    useCoins,
+    useCoins as deductCoins,
     refundCoins
 } from '../../apis/user.api'
 
-const DownloadBtn = ({ docRef, user, setuser }) => {
+const DownloadBtn = ({ docRef, setuser }) => {
     const handlePdf = useReactToPrint({
         contentRef: docRef,
         documentTitle: "RisbenAIPDF"
@@ -22,7 +22,7 @@ const DownloadBtn = ({ docRef, user, setuser }) => {
             // DEDUCT COIN
             // =========================================
 
-            const coinResponse = await useCoins({
+            const coinResponse = await deductCoins({
                 coins: 1,
                 action: "Download-PDF"
             })

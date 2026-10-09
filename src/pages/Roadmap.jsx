@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom'
 import { SiRocket } from "react-icons/si";
 import { BsRocketTakeoff } from "react-icons/bs";
 import {
-    useCoins,
+    useCoins as deductCoins,
     refundCoins
 } from '../apis/user.api';
 import api from '../utils/axios';
@@ -13,7 +13,7 @@ import { useSelector } from 'react-redux'
 import RoadmapResult from '../components/roadmap/RoadmapResult';
 
 const PACKAGE_OPTIONS = ["10 LPA", "15 LPA", "20 LPA", "30 LPA", "40 LPA"]
-const Roadmap = ({ user, setuser }) => {
+const Roadmap = ({ setuser }) => {
     const navigate = useNavigate();
     const [historyOpen, sethistoryOpen] = useState(false)
     const [roadmap, setroadmap] = useState(null)
@@ -40,7 +40,7 @@ const Roadmap = ({ user, setuser }) => {
             const response = await api.get("/api/roadmap/all")
             sethistory(response.data.data)
             sethistoryLoading(false)
-        } catch (error) {
+        } catch {
             sethistoryLoading(false)
         }
     }
@@ -69,7 +69,7 @@ const Roadmap = ({ user, setuser }) => {
             // DEDUCT COIN
             // =================================================
 
-            const coinResponse = await useCoins({
+            const coinResponse = await deductCoins({
                 coins: 1,
                 action: "Roadmap-builder"
             });

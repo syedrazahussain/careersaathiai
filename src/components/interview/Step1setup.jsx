@@ -13,8 +13,8 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
 import {
-    useCoins,
-    refundCoins
+    useCoins as deductCoins,
+    refundCoins,
 } from "../../apis/user.api";
 import { startInterview } from "../../apis/interview.api";
 import { setResume } from "../../redux/resumeSlice";
@@ -96,7 +96,7 @@ const Step1setup = ({ user, setuser }) => {
             // DEDUCT COIN
             // ========================================
 
-            const coinResponse = await useCoins({
+            const coinResponse = await deductCoins({
                 coins: 1,
                 action: "resume-Scorer",
             });
@@ -300,7 +300,7 @@ const Step1setup = ({ user, setuser }) => {
             // DEDUCT INTERVIEW COIN
             // ========================================
 
-            const coinResponse = await useCoins({
+            const coinResponse = await deductCoins({
                 coins: 1,
                 action: "start-interview",
             });

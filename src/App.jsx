@@ -33,15 +33,21 @@ const App = () => {
     getUser()
   }, [])
 
-  useEffect(() => {
-    const getResumeData = async () => {
-      const result = await getResume()
-      dispatch(setResume(result?.data))
-
-      setloading(false)
+ 
+useEffect(() => {
+  const getResumeData = async () => {
+    try {
+      const result = await getResume();
+      dispatch(setResume(result?.data));
+    } catch (error) {
+      console.error("Failed to load resume:", error);
+    } finally {
+      setloading(false);
     }
-    getResumeData()
-  }, [])
+  };
+
+  getResumeData();
+}, [dispatch]);
 
   if (loading) {
     return (

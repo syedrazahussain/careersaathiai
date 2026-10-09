@@ -93,7 +93,7 @@ const Step2setup = ({ interviewData, user }) => {
         streamref.current = stream 
         setcameraon(true)
         setTimeout(() => { if (uservideoref.current) uservideoref.current.srcObject = stream }, 100)
-      } catch (error) { setcameraon(false) }
+      } catch { setcameraon(false) }
     }
   }
 

@@ -3,7 +3,7 @@ import { useNavigate, useParams } from "react-router-dom"
 import { getInterview } from '../apis/interview.api'
 import Step2setup from '../components/interview/Step2setup'
 
-const InterviewPage = ({user,setuser}) => {
+const InterviewPage = ({user}) => {
   const { id } = useParams()
   const [loading, setloading] = useState(true)
   const [interview, setinterview] = useState(null)
