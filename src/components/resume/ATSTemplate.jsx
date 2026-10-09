@@ -119,7 +119,7 @@ const ATSTemplate = ({ data }) => {
                     {experience.map((exp, i) => (
                         <div key={i} className='mb-[11px] break-inside-avoid print:break-inside-avoid'>
                             <div className='flex items-baseline justify-between'>
-                                <span className='text-[12px] font-bold text-black'>{exp.title}</span>
+                                <span className='text-[12px] font-bold text-black'>{exp.role}</span>
                                 <span className='ml-2 whitespace-nowrap text-[10.5px] text-black'>{exp.duration}</span>
 
                             </div>
@@ -128,7 +128,7 @@ const ATSTemplate = ({ data }) => {
 
                             </div>
 
-                            {renderDes(exp.responsibilities?.join("\n"))}
+                            {renderDes(exp.description)}
                         </div>
                     ))}
 

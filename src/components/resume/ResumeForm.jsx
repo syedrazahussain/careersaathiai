@@ -128,15 +128,45 @@ const ResumeForm = ({ step, data, setdata }) => {
                     <p className='text-xs text-black/40 text-center py-3'>
                         No experience added yet. Click below to add.</p>}
 
-                {data.experience.map((exp, index) => (
-                    <EntryCard key={index} onRemove={() => removeExp(index)} >
-                        <Input label="Company" placeholder="ABC Technologies" onChange={(v) => updateExp(index, "company", v)} value={exp.company} />
-                        <Input label="Role" placeholder="Backend Developer" onChange={(v) => updateExp(index, "role", v)} value={exp.role} />
-                        <Input label="Duration" placeholder="Jan 2023 - Dec 2024" onChange={(v) => updateExp(index, "duration", v)} value={exp.duration} />
-                        <TextArea label="Description" placeholder={"• Built REST API\n• Improved performance bt 40%"} onChange={(v) => updateExp(index, "description", v)} value={exp.description} />
 
+                {data.experience.map((exp, index) => (
+                    <EntryCard key={index} onRemove={() => removeExp(index)}>
+                        <Input
+                        className="w-full min-w-0 block bg-white border-2 border-black/25 text-[#0a0a0a] text-xs rounded-lg px-2.5 py-2 outline-none focus:border-black transition-colors placeholder-black/30"
+                            label="Company"
+                            placeholder="ABC Technologies"
+                            value={exp.company ?? ""}
+                            onChange={(v) => updateExp(index, "company", v)}
+                        />
+
+                        <Input
+                        className="w-full min-w-0 block bg-white border-2 border-black/25 text-[#0a0a0a] text-xs rounded-lg px-2.5 py-2 outline-none focus:border-black transition-colors placeholder-black/30"
+                            label="Role"
+                            placeholder="Backend Developer"
+                            value={exp.role ?? ""}
+                            onChange={(v) => updateExp(index, "role", v)}
+                        />
+
+                        <Input
+                        className="w-full min-w-0 block bg-white border-2 border-black/25 text-[#0a0a0a] text-xs rounded-lg px-2.5 py-2 outline-none focus:border-black transition-colors placeholder-black/30"
+                            label="Duration"
+                            placeholder="Jan 2023 - Dec 2024"
+                            value={exp.duration ?? ""}
+                            onChange={(v) => updateExp(index, "duration", v)}
+                        />
+
+                        <TextArea
+                        className="w-full min-w-0 block bg-white border-2 border-black/25 text-[#0a0a0a] text-xs rounded-lg px-2.5 py-2 outline-none resize-y focus:border-black transition-colors placeholder-black/30"
+                            label="Description"
+                            placeholder={"Built REST APIs\nImproved performance by 40%"}
+                            value={exp.description ?? ""}
+                            onChange={(v) => updateExp(index, "description", v)}
+                            rows={4}
+                        />
                     </EntryCard>
                 ))}
+
+
                 <button onClick={addExp} className='flex items-center justify-center gap-1.5 w-full py-2.5
                          border border-dashed border-black/20 rounded-xl text-xs text-black/45 hover:border-black/40
                          hover:text-[#0a0a0a] transition-all'>
@@ -149,7 +179,7 @@ const ResumeForm = ({ step, data, setdata }) => {
         )
     }
 
-      if (step === 5) {
+    if (step === 5) {
         const addPro = () => {
             setdata({
                 ...data, projects: [...data.projects, {
@@ -198,12 +228,12 @@ const ResumeForm = ({ step, data, setdata }) => {
             </div>
         )
     }
-      if (step === 6) {
+    if (step === 6) {
         const addEdu = () => {
             setdata({
                 ...data, education: [...data.education, {
                     college: "", degree: "", branch: "",
-                    cgpa: "",year:""
+                    cgpa: "", year: ""
                 }]
             })
         }
@@ -232,7 +262,7 @@ const ResumeForm = ({ step, data, setdata }) => {
                         <Input label="Degree" placeholder="B.tech" onChange={(v) => updateEdu(index, "degree", v)} value={edu.degree} />
                         <Input label="Branch" placeholder="Computer Science" onChange={(v) => updateEdu(index, "branch", v)} value={edu.branch} />
                         <Input label="CGPA" placeholder="9.57" onChange={(v) => updateEdu(index, "cgpa", v)} value={edu.cgpa} />
-                         <Input label="Year" placeholder="2022-2026" onChange={(v) => updateEdu(index, "year", v)} value={edu.year} />
+                        <Input label="Year" placeholder="2022-2026" onChange={(v) => updateEdu(index, "year", v)} value={edu.year} />
 
                     </EntryCard>
                 ))}
