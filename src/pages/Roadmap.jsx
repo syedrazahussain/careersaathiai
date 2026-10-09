@@ -38,7 +38,6 @@ const Roadmap = ({ user, setuser }) => {
         sethistoryLoading(true)
         try {
             const response = await api.get("/api/roadmap/all")
-            console.log(response.data)
             sethistory(response.data.data)
             sethistoryLoading(false)
         } catch (error) {
@@ -50,7 +49,6 @@ const Roadmap = ({ user, setuser }) => {
         try {
 
             const response = await api.get(`/api/roadmap/${id}`);
-            console.log(response.data)
             setroadmap(response.data.data)
         } catch (error) {
             console.log(error)

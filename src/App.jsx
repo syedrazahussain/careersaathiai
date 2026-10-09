@@ -14,9 +14,13 @@ import InterviewReport from "./pages/InterviewReport"
 import Roadmap from "./pages/Roadmap"
 import Billing from "./pages/Billing"
 import ResumeAnalyzer from "./pages/ResumeAnalyzer/ResumeAnalyzer"
+import useBackendWarmup from "./hooks/useBackendWarmup";
 
 
 const App = () => {
+
+  useBackendWarmup();
+
   const [user, setuser] = useState(null);
   const [loading, setloading] = useState(true)
   const dispatch = useDispatch()

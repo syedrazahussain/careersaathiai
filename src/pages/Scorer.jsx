@@ -178,7 +178,6 @@ const Scorer = ({ user, setuser }) => {
         (state) => state.resume
     )
 
-    console.log({ resume })
 
 
     // =========================================================
